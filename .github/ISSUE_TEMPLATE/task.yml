@@ -1,0 +1,58 @@
+name: Task
+description: Create a technical task
+title: "[TASK]: "
+labels: ["task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Task Template
+        Define a technical task that needs to be completed.
+        
+  - type: textarea
+    id: description
+    attributes:
+      label: Task Description
+      description: Describe what needs to be done
+      placeholder: "Implement user authentication service"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements
+      description: "List the requirements or steps to complete this task"
+      placeholder: |
+        - [ ] Create authentication service class
+        - [ ] Implement login method
+        - [ ] Implement logout method
+        - [ ] Add unit tests
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: What is the priority of this task?
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+      
+  - type: input
+    id: related-story
+    attributes:
+      label: Related User Story
+      description: Link to the related user story (if any)
+      placeholder: "#123"
+      
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context about the task
+      placeholder: Provide any additional information that might be helpful

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: GitHub Projects
+    url: https://github.com/purnamaanaking/my-scrum-project/projects
+    about: Manage project tasks and sprints in GitHub Projects
+  - name: GitHub Discussions
+    url: https://github.com/purnamaanaking/my-scrum-project/discussions
+    about: Ask questions and discuss ideas with the community

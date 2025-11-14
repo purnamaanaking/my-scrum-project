@@ -1,0 +1,43 @@
+name: Add Issues to Project
+
+on:
+  issues:
+    types:
+      - opened
+      - reopened
+
+jobs:
+  add-to-project:
+    name: Add issue to project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate token
+        id: generate_token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.PROJECT_APP_ID }}
+          private-key: ${{ secrets.PROJECT_APP_PRIVATE_KEY }}
+        # If you don't have a GitHub App set up, you can use a PAT instead:
+        # - name: Add to project
+        #   uses: actions/add-to-project@v0.5.0
+        #   with:
+        #     project-url: https://github.com/users/purnamaanaking/projects/YOUR_PROJECT_NUMBER
+        #     github-token: ${{ secrets.PROJECT_PAT }}
+
+      - name: Add to project
+        uses: actions/add-to-project@v0.5.0
+        with:
+          # Replace with your actual project URL
+          # Format: https://github.com/users/USERNAME/projects/NUMBER
+          # or: https://github.com/orgs/ORGNAME/projects/NUMBER
+          project-url: https://github.com/users/purnamaanaking/projects/1
+          github-token: ${{ steps.generate_token.outputs.token }}
+
+# Note: This workflow requires either:
+# 1. A GitHub App with project permissions (recommended for organizations)
+# 2. A Personal Access Token (PAT) with project permissions (stored in secrets.PROJECT_PAT)
+#
+# To use this workflow:
+# 1. Create a GitHub Project at https://github.com/purnamaanaking/my-scrum-project/projects
+# 2. Update the project-url above with your actual project URL
+# 3. Set up authentication (GitHub App or PAT)

@@ -1,0 +1,58 @@
+name: User Story
+description: Create a new user story for the project
+title: "[USER STORY]: "
+labels: ["user-story"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## User Story Template
+        Define a user story following the Scrum framework.
+        
+  - type: textarea
+    id: user-story
+    attributes:
+      label: User Story
+      description: "As a [type of user], I want [goal] so that [reason/benefit]"
+      placeholder: "As a user, I want to be able to login so that I can access my personal dashboard"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: "Define the conditions that must be met for this story to be considered complete"
+      placeholder: |
+        - [ ] User can enter username and password
+        - [ ] System validates credentials
+        - [ ] User is redirected to dashboard upon successful login
+        - [ ] Error message is shown for invalid credentials
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: What is the priority of this user story?
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+      
+  - type: input
+    id: story-points
+    attributes:
+      label: Story Points
+      description: "Estimated effort (Fibonacci: 1, 2, 3, 5, 8, 13, 21)"
+      placeholder: "5"
+      
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context, screenshots, or mockups about the user story
+      placeholder: Provide any additional information that might be helpful

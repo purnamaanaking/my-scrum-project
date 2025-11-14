@@ -1,0 +1,78 @@
+name: Epic
+description: Create a large feature or initiative that spans multiple sprints
+title: "[EPIC]: "
+labels: ["epic"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Epic Template
+        Define a large feature or initiative that will be broken down into multiple user stories.
+        
+  - type: textarea
+    id: description
+    attributes:
+      label: Epic Description
+      description: High-level description of the epic
+      placeholder: "Implement complete user management system"
+    validations:
+      required: true
+      
+  - type: textarea
+    id: goals
+    attributes:
+      label: Goals
+      description: What are the main goals of this epic?
+      placeholder: |
+        - Enable user registration and authentication
+        - Provide role-based access control
+        - Allow profile management
+    validations:
+      required: true
+      
+  - type: textarea
+    id: user-stories
+    attributes:
+      label: Related User Stories
+      description: List or link the user stories that are part of this epic
+      placeholder: |
+        - [ ] #1 User registration
+        - [ ] #2 User login
+        - [ ] #3 Password reset
+        - [ ] #4 Profile management
+      
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: What is the priority of this epic?
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+      
+  - type: input
+    id: target-sprint
+    attributes:
+      label: Target Sprint/Release
+      description: When do you plan to complete this epic?
+      placeholder: "Sprint 5 / Q1 2025"
+      
+  - type: textarea
+    id: success-criteria
+    attributes:
+      label: Success Criteria
+      description: How will you measure the success of this epic?
+      placeholder: |
+        - All user stories completed
+        - 90% test coverage
+        - Performance benchmarks met
+      
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context about the epic
+      placeholder: Provide any additional information that might be helpful
